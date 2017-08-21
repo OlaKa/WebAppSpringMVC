@@ -20,8 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class OffersDAO {
 
 	private NamedParameterJdbcTemplate jdbc;
-	
-	public OffersDAO(){
+
+	public OffersDAO() {
 		System.out.println("Sucessfully loaded offers DAO");
 	}
 
@@ -37,11 +37,11 @@ public class OffersDAO {
 		return jdbc.update("insert into offers(name, text,email) values (:name,:text,:email)", params) == 1;
 
 	}
-	
-	//Batch job
+
+	// Batch job
 	@Transactional
-	public int [] create(List<Offer> offer){
-		
+	public int[] create(List<Offer> offer) {
+
 		SqlParameterSource[] params = SqlParameterSourceUtils.createBatch(offer.toArray());
 		return jdbc.batchUpdate("insert into offers(name, text, email) values (:name,:text,:email)", params);
 	}

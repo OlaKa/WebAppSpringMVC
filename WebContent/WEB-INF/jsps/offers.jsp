@@ -8,18 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<!--  
-	Session: (using EL) ${name}
-	<c:out value="${name}"></c:out>
-
-	<sql:query var="rs" dataSource="jdbc/spring">
-	select id, name, email,text from offers
-	</sql:query> -->
-	
-	<p><a href="${pageContext.request.contextPath}/offers">All offers</a></p>
-	<p><a href="${pageContext.request.contextPath}/createoffer">Add a new offer</a></p>
-
-
+	<c:forEach var="row" items="${offers}">
+	Id: ${row.id} <br />
+    Name: ${row.name}<br />
+    Email: ${row.email}<br />
+    Text: ${row.text}<br />
+	</c:forEach>
 </body>
 </html>

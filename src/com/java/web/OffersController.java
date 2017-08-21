@@ -1,6 +1,5 @@
 package com.java.web;
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -17,34 +16,36 @@ import com.java.web.dao.service.OffersService;
 
 @Controller
 public class OffersController {
-	
+
 	private OffersService offersService;
-	
-	
-	
+
 	/*
-	@RequestMapping("/")
-	public ModelAndView showHome() {
-		ModelAndView mv = new ModelAndView("home");
-		
-		Map<String, Object> model = mv.getModel();
-		
-		model.put("name", "River");
-		
-		return mv;
-	}*/
-	
+	 * @RequestMapping("/") public ModelAndView showHome() { ModelAndView mv =
+	 * new ModelAndView("home");
+	 * 
+	 * Map<String, Object> model = mv.getModel();
+	 * 
+	 * model.put("name", "River");
+	 * 
+	 * return mv; }
+	 */
+
 	@Autowired
 	public void setOffersService(OffersService offersService) {
 		this.offersService = offersService;
 	}
 
-	@RequestMapping("/")
-	public String showHome(Model model) {
-		
+	@RequestMapping("/offers")
+	public String showOffers(Model model) {
+
 		List<Offer> offers = offersService.getCurrent();
 		model.addAttribute("offers", offers);
-		return "home";
+		return "offers";
+	}
+	
+	@RequestMapping("/createoffer")
+	public String showHome() {
+
+		return "createoffer";
 	}
 }
-
