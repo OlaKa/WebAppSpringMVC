@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>Welcome, Enter your Details</h3>
 	<sf:form method="post"
 		action="${pageContext.request.contextPath}/docreate" commandName="offer">
 		<div class="form-group">
@@ -17,19 +18,19 @@
 
 				<tr>
 					<td>Name:</td>
-					<td><sf:input path="name" name="name" type="text" /></td>
+					<td><sf:input class="control" path="name" name="name" type="text" /><br/><sf:errors path="name" cssClass="error"></sf:errors></td>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><sf:input path="email" name="email" type="text" /></td>
+					<td><sf:input class="control" path="email" name="email" type="text" /><br/><sf:errors path="email" cssClass="error"></sf:errors></td>
 				</tr>
 				<tr>
 					<td>Your offer:</td>
-					<td><sf:textarea rows="10" path="text" name="text" cols="10" type="text"></sf:textarea></td>
+					<td><sf:textarea class="control" rows="10" path="text" name="text" cols="10" type="text"></sf:textarea><br/><sf:errors path="text" cssClass="error"></sf:errors></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input value="Create advert" type="submit" /></td>
+					<td><input class="control" value="Create advert" type="submit" /></td>
 				</tr>
 			</table>
 		</div>
