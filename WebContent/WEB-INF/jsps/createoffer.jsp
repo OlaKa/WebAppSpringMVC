@@ -24,7 +24,7 @@
 				</tr>
 				<tr>
 					<td>Your offer:</td>
-					<td><textarea rows="10" name="text" cols="10" /></textarea></td>
+					<td><textarea rows="10" name="text" cols="10" type="text"  /></textarea></td>
 				</tr>
 				<tr>
 					<td></td>
