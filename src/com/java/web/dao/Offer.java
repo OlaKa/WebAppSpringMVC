@@ -12,7 +12,7 @@ public class Offer {
 	@NotNull
 	@Pattern(regexp=".*\\@.*\\..*", message="This is not a valid email address")
 	private String email;
-	@Size(min=20, max=255, message="name must be between 20 and 255 characters")
+	@Size(min=20, max=255, message="Textbox must be between 20 and 255 characters")
 	private String text;
 
 	public Offer() {

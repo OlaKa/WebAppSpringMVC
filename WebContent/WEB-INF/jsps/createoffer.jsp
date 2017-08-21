@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,22 +10,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post"
-		action="${pageContext.request.contextPath}/docreate">
+	<sf:form method="post"
+		action="${pageContext.request.contextPath}/docreate" commandName="offer">
 		<div class="form-group">
 			<table class="table">
 
 				<tr>
 					<td>Name:</td>
-					<td><input name="name" type="text" /></td>
+					<td><sf:input path="name" name="name" type="text" /></td>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><input name="email" type="text" /></td>
+					<td><sf:input path="email" name="email" type="text" /></td>
 				</tr>
 				<tr>
 					<td>Your offer:</td>
-					<td><textarea rows="10" name="text" cols="10" type="text"  /></textarea></td>
+					<td><sf:textarea rows="10" path="text" name="text" cols="10" type="text"></sf:textarea></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -32,6 +33,6 @@
 				</tr>
 			</table>
 		</div>
-	</form>
+	</sf:form>
 </body>
 </html>
