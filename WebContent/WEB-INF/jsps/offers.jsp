@@ -5,14 +5,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>Offers</title>
 </head>
 <body>
-	<c:forEach var="row" items="${offers}">
-	Id: ${row.id} <br />
-    Name: ${row.name}<br />
-    Email: ${row.email}<br />
-    Text: ${row.text}<br />
-	</c:forEach>
+<div class="container">
+
+	<table class="table">
+
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Offer</th>
+			</tr>
+		</thead>
+		<c:forEach var="offer" items="${offers}">
+			<tr>
+				<td><c:out value="${offer.name}"></c:out></td>
+				<td><c:out value="${offer.email}"></c:out></td>
+				<td><c:out value="${offer.text}"></c:out></td>
+			</tr>
+		</c:forEach>
+	</table>
+	</div>
 </body>
 </html>
