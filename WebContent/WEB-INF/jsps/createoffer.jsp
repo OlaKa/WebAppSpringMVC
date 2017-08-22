@@ -10,7 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>Welcome, Enter your Details</h3>
 	<sf:form method="post"
 		action="${pageContext.request.contextPath}/docreate" commandName="offer">
 		<div class="form-group">
